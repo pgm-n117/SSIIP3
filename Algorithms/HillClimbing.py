@@ -23,6 +23,7 @@ def HillClimbing(n, seed, it):
 
     #Generamos una configuración aleatoria de muros
     actualIndividual = Individual(n)
+    actualFitness = fitness(n, actualIndividual.getIndividual())
     print("Individuo inicial: ")
     actualIndividual.__str__()
 
