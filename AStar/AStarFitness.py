@@ -2,7 +2,7 @@ from time import time
 
 from AStar.AEstrella import *
 from AStar.Estructuras.Solucion import *
-from Structures.Individual import *
+from Structures.IndividualClass import *
 
 def fitness (n, walls):
     solucion = Solucion(None, None, None, None, None, None, None, 0.0)
@@ -12,10 +12,10 @@ def fitness (n, walls):
     #solucion.printSolucion()
     if solucion.secuenciaAcc is not None:
         #solucion.printSolucion()
-        return solucion.tEjec
+        return solucion.nExpan
     else:
         #print("No hay solución")
-        return None
+        return -1
 
 
 

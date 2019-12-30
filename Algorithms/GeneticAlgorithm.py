@@ -1,4 +1,4 @@
-from Structures.Individual import *
+from Structures.IndividualClass import *
 from AStar.AStarFitness import *
 
 def geneticAlgorithm(n, seed):

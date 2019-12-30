@@ -65,7 +65,7 @@ def InicializaHeuristica(n,maze):
                     coords[num+1].append((y,x-1))
         if (len(coords[num+1])==0): break
     for i in range(n):
-        print(matrizH[i])
+        '''print(matrizH[i]) #COMENTADO PARA LA EJECUCIÓN'''
     return matrizH
 
 #Calcula la heurística de un nodo, devuelve la distancia en linea recta desde un coche hasta la última fila
@@ -74,14 +74,7 @@ def Heuristica(estado):
     for pos in estado:
         h += matrizH[pos[1]][pos[0]]
     return h;
-'''
-    h=0
-    for pos in estado:
-        h += ((n-1)-pos[1])
-        if(-1 in ([maze[i][pos[0]] for i in range(pos[1],n)])):
-            h+=1
-    return h;
-'''
+
 
 
 #Comprobamos si un estado es una solución

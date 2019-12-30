@@ -15,7 +15,7 @@ def AEstrella(num, nCoches, walls):
     global maze,n,nCars
     maze = getProblemInstance(num, walls)
 
-    mazePreview(num, maze)
+    #mazePreview(num, maze)
 
     n = num             #Tamaño del problema
     nCars = nCoches     #Número de coches
@@ -49,7 +49,7 @@ def AEstrella(num, nCoches, walls):
 
     #Para atajar y conocer si hay solución o no, comprobamos si hemos generado un valor heurístico en la primera fila del maze
     if hay_solucion(mazeH) is False:
-        print("No hay solución")
+        #print("No hay solución")
         return Solucion(None, None, nodosCreados, nodosExpandidos, nodosExplorados, maxElegibles, maxNodos, -1)
 
     while (continuar):
