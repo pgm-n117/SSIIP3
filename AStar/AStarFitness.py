@@ -12,10 +12,10 @@ def fitness (n, walls):
     #solucion.printSolucion()
     if solucion.secuenciaAcc is not None:
         #solucion.printSolucion()
-        return solucion.nExpan
+        return solucion.nExpan, solucion.coste
     else:
         #print("No hay solución")
-        return -1
+        return (-1, -1)
 
 
 

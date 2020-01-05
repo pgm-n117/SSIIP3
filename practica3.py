@@ -12,8 +12,14 @@ if __name__ == "__main__":
     parser.add_argument('algoritmo', choices=['hillclimbing', 'geneticalgorithm'],
                         help='Algoritmo con el que se abordará el ejercicio')
 
-    parser.add_argument('--it', type=int, help='número de iteraciones')
-    parser.add_argument('--pS', type=int, help='Polulation Size: Tamaño de la población')
+    parser.add_argument('--it', type=int, help='Número de iteraciones para Hill Climbing')
+    parser.add_argument('--cruce', choices=['uniforme', '1px', '2px'],
+                        help='Cruce para algoritmo genético')
+    parser.add_argument('--pS', type=int, help='Polulation Size: Tamaño de la población para Algoritmo Genético')
+    parser.add_argument('--gen', type=int, help='Generaciones para Algoritmo Genético')
+    parser.add_argument('--probC', type=float, help='Probabilidad de cruce para Algoritmo Genético')
+    parser.add_argument('--probM', type=float, help='Probabilidad de mutación para Algoritmo Genético')
+    parser.add_argument('--members', type=int, help='Miembros del torneo para Algoritmo Genético')
 
     args = parser.parse_args()
 
@@ -30,7 +36,8 @@ if __name__ == "__main__":
     elif (args.algoritmo == 'geneticalgorithm'):
         from Algorithms.GeneticAlgorithm import *
 
-        solucion = geneticAlgorithm(args.n, args.seed. args.pS)
+#        solucion = geneticAlgorithm(args.n, args.seed. args.pS, args.gen, args.probC, args.probM, args.members, args.cruce)
+        solucion = geneticAlgorithm(args.n, args.seed, args.pS, args.gen, args.probC, args.probM, args.members, args.cruce )
 
     tiempoFin = str(time() - tiempoInicio)
 

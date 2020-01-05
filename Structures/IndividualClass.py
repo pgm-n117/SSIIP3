@@ -2,14 +2,20 @@ import random
 from copy import deepcopy
 
 class Individual:
-    #Constructor de un individuo, crea un individuo con muros aleatorios de tamaño de problema n
-    def __init__(self, size):
-        self.individual = [[random.randint(-1, 0) for _ in range(size)] for _ in range(size-2)]
+    #Constructor de un individuo, crea un individuo con muros aleatorios de tamaño de problema n,
+    # o con una configuración dada
+    def __init__(self, size, walls):
+        if walls == None:
+            self.individual = [[random.randint(-1, 0) for _ in range(size)] for _ in range(size-2)]
+        else:
+            self.individual = walls
+
+
     #Devuelve el array de muros del individuo
     def getIndividual(self):
         return self.individual
 
-
+    #Para clonar un individuo, porque al igualar se cra una referencia
     def __deepcopy__(self, memo={}):
         cls = self.__class__
         result = cls.__new__(cls)
@@ -18,7 +24,7 @@ class Individual:
             setattr(result, k, deepcopy(v, memo))
         return result
 
-
+    #Para imprimir por pantalla un individuo
     def __str__(self):
         n = self.individual.__len__()
         mazePreview = [[' ' for x in range(n+2)]for y in range(n)]
