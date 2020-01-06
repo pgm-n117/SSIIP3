@@ -78,4 +78,4 @@ def HillClimbing(n, seed, it):
     print("Mejor Individuo: ")
     bestIndividual.__str__()
     print("Nodos Expandidos: " + bestFitness[0].__str__() + " Coste de la solución: " + bestFitness[1].__str__())
-    return bestIndividual.getIndividual()
+    return bestFitness

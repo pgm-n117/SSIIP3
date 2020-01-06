@@ -125,4 +125,4 @@ def geneticAlgorithm(n: int, seed: int, pSize: int, generations: int, probC: flo
     print("Mejor Individuo: ")
     bestIndividual.__str__()
     print("Coste: " + bestFitness.__str__())
-    return bestIndividual, bestFitness
+    return bestFitness
